@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", init);
 let text;
 let showText;
 let htmlText = document.querySelector(".typewritten");
-let i = 1;
+let Nth = 1;
 
 function init() {
   console.log("init");
@@ -25,10 +25,10 @@ function loop() {
   //show the N'th letter:
   // - set textContent to substring of 0 to N
   //wait before calling loop() again
-  showText = text.substring(0, i);
+  showText = text.substring(0, Nth);
   htmlText.textContent = showText;
-  if (i < text.length) {
-    i++;
+  if (Nth < text.length) {
+    Nth++;
     setTimeout(loop, 500);
   }
 }
